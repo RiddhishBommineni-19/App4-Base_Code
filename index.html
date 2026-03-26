@@ -23,7 +23,6 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
         function heartattackAdd(){
             heartattack_count = heartattack_count + 1;
-		alert(heartattack);
 
         }
 
@@ -40,7 +39,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         document.getElementById("result").innerHTML =
           "This is acid reflux you will be fine.";
 	  } 
-		
+else {document.getElementById("result").innerHTML = "Results are inconclusive. Please consult a doctor.";
+        } }
   </script>
 
 
@@ -146,6 +146,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
   </div>
 </div>
 
+        <a href="#resultPage" onclick="heartattackAdd()" class="w3-btn w3-green">Yes</a>
+        <a href="#resultPage" onclick="acidrefluxAdd()" class="w3-btn w3-red">No</a>
+    </div>
+</div>
+
+	
 <!-- RESULTS PAGE -->
 <div class="page" id="resultPage">
   <div class="w3-container w3-flat-carrot">
