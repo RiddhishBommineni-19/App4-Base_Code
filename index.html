@@ -1,49 +1,54 @@
 <!DOCTYPE html> 
 <html> 
-<!-- The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only.  Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.
- 
-THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
- 
- 
-Authors in chronological order of contribution:
-Tim Riedel
-Author 2
- 
-Further Information:
-http://diystream.cns.utexas.edu/
+<!-- App 3: Cold or Allergy
 
-Research Educator:
-Timothy Riedel
-triedel@utexas.edu
- 
-Brief Description of Goal of Code:
-blah, blah, blah,
- 
-Known Issues:
-blah, blah, blah, blah
-Ignore this error message if you see it using the javaScript console: Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'interest-cohort'.
 
-References:
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
 	
-<head> 
-	<title>Hello World</title>  
-]	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<link rel="stylesheet" href="w3.css">
-	<link rel="stylesheet" href="w3-colors-flat.css">
-</head> 
+   <head> 
+      <title>Cold or Allergy App</title>  
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <link rel="stylesheet" href="w3.css">
+      <link rel="stylesheet" href="w3-colors-flat.css">
+   </head> 
+
 
 <script>
-
-	//YOUR JAVASCRIPT GOES HERE
-
-</script>	
+        var allergy_count = 0;
+        var cold_count = 0;
 
 
-<!-- THIS STYLE CODE HELPS MAKE YOUR APP LOOK GOOD. PROBABLY DONT MESS WITH IT -->
+        function allergyAdd(){
+            allergy_count = allergy_count + 1;
+		alert(allergy_count);
+
+        }
+
+        function coldAdd(){
+            cold_count = cold_count + 1;
+        }
+// Compares counts and displays result
+    function showResult() {
+      if (allergy_count > cold_count) {
+        document.getElementById("result").innerHTML =
+          "More likely allergies.";
+      }
+      else if (cold_count > allergy_count) {
+        document.getElementById("result").innerHTML =
+          "More likely a cold.";
+      }
+      else {
+        document.getElementById("result").innerHTML =
+          "Could be either.";
+      }
+    }
+  </script>
+
+
+
 <style>	
 .body {
      margin: 0em;
@@ -67,9 +72,121 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 </style>
 
 <body>
+<div class="w3-container w3-flat-carrot">
+	<h1>Cold or Allergies?</h1>
+</div>
 	
-	<!-- HERE IS WHERE ALL OF YOUR HTML PAGES GO -->
-	REPLACE THIS TEXT
+<div id="content" class="w3-container">
+	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
 	
+	<a href="#one" class="w3-btn w3-grey w3-round">Click below to get started</a>
+	
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+ 	
+	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+</div> <!-- adding this because it seems to be missing????? -->
+	
+<body>
+
+<!-- HOME PAGE -->
+<div class="w3-container w3-flat-carrot">
+  <h1>Cold or Allergy?</h1>
+</div>
+
+<div class="w3-container">
+  <p>
+    Answer a few questions to see whether your symptoms
+    are more consistent with a cold or allergies.
+  </p>
+
+  <a href="#q1" class="w3-btn w3-black">Start</a>
+</div>
+
+<!-- QUESTION 1 -->
+<div class="page" id="q1">
+  <div class="w3-container w3-flat-carrot">
+    <h2>Are your eyes watery or itchy?</h2>
+  </div>
+
+  <div class="w3-container">
+    <a href="#q2" onclick="allergyAdd()" class="w3-btn w3-green">Yes</a>
+    <a href="#q2" onclick="coldAdd()" class="w3-btn w3-red">No</a>
+  </div>
+</div>
+
+<!-- QUESTION 2 -->
+<div class="page" id="q2">
+  <div class="w3-container w3-flat-carrot">
+    <h2>Do you have a fever?</h2>
+  </div>
+
+  <div class="w3-container">
+    <a href="#q3" onclick="coldAdd()" class="w3-btn w3-green">Yes</a>
+    <a href="#q3" onclick="allergyAdd()" class="w3-btn w3-red">No</a>
+  </div>
+</div>
+
+<!-- QUESTION 3 -->
+<div class="page" id="q3">
+  <div class="w3-container w3-flat-carrot">
+    <h2>Do you have a sore throat?</h2>
+  </div>
+
+  <div class="w3-container">
+    <a href="#q4" onclick="coldAdd()" class="w3-btn w3-green">Yes</a>
+    <a href="#q4" onclick="allergyAdd()" class="w3-btn w3-red">No</a>
+  </div>
+</div>
+
+<!-- QUESTION 4 -->
+<div class="page" id="q4">
+  <div class="w3-container w3-flat-carrot">
+    <h2>Are your symptoms seasonal?</h2>
+  </div>
+
+  <div class="w3-container">
+    <a href="#q5" onclick="allergyAdd()" class="w3-btn w3-green">Yes</a>
+    <a href="#q5" onclick="coldAdd()" class="w3-btn w3-red">No</a>
+  </div>
+</div>
+
+<!-- NEW ALLERGY QUESTION -->
+<div class="page" id="q5">
+  <div class="w3-container w3-flat-carrot">
+    <h2>Are you sneezing frequently?</h2>
+  </div>
+
+  <div class="w3-container">
+    <a href="#q6" onclick="allergyAdd()" class="w3-btn w3-green">Yes</a>
+    <a href="#q6" onclick="coldAdd()" class="w3-btn w3-red">No</a>
+  </div>
+</div>
+
+<!-- NEW COLD QUESTION -->
+<div class="page" id="q6">
+  <div class="w3-container w3-flat-carrot">
+    <h2>Do you feel body aches or fatigue?</h2>
+  </div>
+
+  <div class="w3-container">
+    <a href="#resultPage" onclick="coldAdd()" class="w3-btn w3-green">Yes</a>
+    <a href="#resultPage" onclick="allergyAdd()" class="w3-btn w3-red">No</a>
+  </div>
+</div>
+
+<!-- RESULTS PAGE -->
+<div class="page" id="resultPage">
+  <div class="w3-container w3-flat-carrot">
+    <h2>Result</h2>
+  </div>
+
+  <div class="w3-container">
+    <p id="result"></p>
+    <a href="#resultPage" onclick="showResult()" class="w3-btn w3-black">
+      Show Result
+    </a>
+  </div>
+</div>
+
 </body>
 </html>
