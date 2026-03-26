@@ -49,7 +49,11 @@ else {document.getElementById("result").innerHTML = "Results are inconclusive. P
  {
      margin: 0em;
 }
-
+	
+img, object {
+    max-height: 90%;
+    max-width: 90%;
+}
 .page {
     width: 100vw;
     height: 100vh;
@@ -134,14 +138,17 @@ else {document.getElementById("result").innerHTML = "Results are inconclusive. P
   </div>
 </div>
 
-<!-- QUESTION 4 -->
-<div class="page" id="q4">
+<!-- RESULTS PAGE -->
+<div class="page" id="resultPage">
   <div class="w3-container w3-flat-carrot">
-    <h2>Do you feel pain that is spreading to the jaw, arms or back?</h2>
+    <h2>Result</h2>
   </div>
   <div class="w3-container">
-    <a href="#resultPage" onclick="heartattackAdd()" class="w3-btn w3-green">Yes</a>
-    <a href="#resultPage" onclick="acidrefluxAdd()" class="w3-btn w3-red">No</a>
+    <img src="YOUR_IMAGE_FILE.jpg" alt="description of image">
+    <p id="result"></p>
+    <a href="#resultPage" onclick="showResult()" class="w3-btn w3-black">
+      Show Result
+    </a>
   </div>
 </div>
 
