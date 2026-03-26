@@ -1,6 +1,6 @@
 <!DOCTYPE html> 
 <html> 
-<!-- App 3: Cold or Allergy
+<!-- App 4: Heart attack or acid reflux
 
 
 https://www.w3schools.com/w3css/default.asp
@@ -8,7 +8,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 -->
 	
    <head> 
-      <title>Cold or Allergy App</title>  
+      <title>Heart attack or acid reflux?</title>  
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="apple-mobile-web-app-capable" content="yes">
       <link rel="stylesheet" href="w3.css">
@@ -17,34 +17,29 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 
 <script>
-        var allergy_count = 0;
-        var cold_count = 0;
+        var heartattack_count = 0;
+        var acidreflux_count = 0;
 
 
-        function allergyAdd(){
-            allergy_count = allergy_count + 1;
-		alert(allergy_count);
+        function heartattackAdd(){
+            heartattack_count = heartattack_count + 1;
+		alert(heartattack);
 
         }
 
-        function coldAdd(){
-            cold_count = cold_count + 1;
+        function acidrefluxAdd(){
+            acidreflux_count = acidreflux_count + 1;
         }
 // Compares counts and displays result
     function showResult() {
-      if (allergy_count > cold_count) {
+      if (heartattack_count > acidreflux_coutn) {
         document.getElementById("result").innerHTML =
-          "More likely allergies.";
+          "You could be having a heart attack.";
       }
-      else if (cold_count > allergy_count) {
+      else if (heartattack_count < acidreflux_count) {
         document.getElementById("result").innerHTML =
-          "More likely a cold.";
-      }
-      else {
-        document.getElementById("result").innerHTML =
-          "Could be either.";
-      }
-    }
+          "This is acid reflux you will be fine.";
+		  
   </script>
 
 
@@ -73,11 +68,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <body>
 <div class="w3-container w3-flat-carrot">
-	<h1>Cold or Allergies?</h1>
+	<h1>Heart attack or acid reflux</h1>
 </div>
 	
 <div id="content" class="w3-container">
-	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
+	<p>Answer some questions to see if you need to go to the hospital or if you need to change life style habits</p>
 	
 	<a href="#one" class="w3-btn w3-grey w3-round">Click below to get started</a>
 	
@@ -90,13 +85,13 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <!-- HOME PAGE -->
 <div class="w3-container w3-flat-carrot">
-  <h1>Cold or Allergy?</h1>
+  <h1>Heart attack or acid reflux?</h1>
 </div>
 
 <div class="w3-container">
   <p>
     Answer a few questions to see whether your symptoms
-    are more consistent with a cold or allergies.
+    are more consistent with a Heart attack or acid reflux.
   </p>
 
   <a href="#q1" class="w3-btn w3-black">Start</a>
@@ -105,24 +100,24 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <!-- QUESTION 1 -->
 <div class="page" id="q1">
   <div class="w3-container w3-flat-carrot">
-    <h2>Are your eyes watery or itchy?</h2>
+    <h2>Do you have pressure in the chest that hurts?</h2>
   </div>
 
   <div class="w3-container">
-    <a href="#q2" onclick="allergyAdd()" class="w3-btn w3-green">Yes</a>
-    <a href="#q2" onclick="coldAdd()" class="w3-btn w3-red">No</a>
+    <a href="#q2" onclick="heartattackAdd()" class="w3-btn w3-green">Yes</a>
+    <a href="#q2" onclick="acidrefluxAdd()" class="w3-btn w3-red">No</a>
   </div>
 </div>
 
 <!-- QUESTION 2 -->
 <div class="page" id="q2">
   <div class="w3-container w3-flat-carrot">
-    <h2>Do you have a fever?</h2>
+    <h2>Do you have a sour or bitter taste in the throat or mouth?</h2>
   </div>
 
   <div class="w3-container">
-    <a href="#q3" onclick="coldAdd()" class="w3-btn w3-green">Yes</a>
-    <a href="#q3" onclick="allergyAdd()" class="w3-btn w3-red">No</a>
+    <a href="#q3" onclick="acidrefluxAdd()" class="w3-btn w3-green">Yes</a>
+    <a href="#q3" onclick="heartattackAdd()" class="w3-btn w3-red">No</a>
   </div>
 </div>
 
@@ -133,44 +128,20 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
   </div>
 
   <div class="w3-container">
-    <a href="#q4" onclick="coldAdd()" class="w3-btn w3-green">Yes</a>
-    <a href="#q4" onclick="allergyAdd()" class="w3-btn w3-red">No</a>
+    <a href="#q4" onclick="acidrefluxAdd()" class="w3-btn w3-green">Yes</a>
+    <a href="#q4" onclick="heartattackAdd()" class="w3-btn w3-red">No</a>
   </div>
 </div>
 
 <!-- QUESTION 4 -->
 <div class="page" id="q4">
   <div class="w3-container w3-flat-carrot">
-    <h2>Are your symptoms seasonal?</h2>
+    <h2>Do you feel pain that is spreading to the jaw, arms or back?</h2>
   </div>
 
   <div class="w3-container">
-    <a href="#q5" onclick="allergyAdd()" class="w3-btn w3-green">Yes</a>
-    <a href="#q5" onclick="coldAdd()" class="w3-btn w3-red">No</a>
-  </div>
-</div>
-
-<!-- NEW ALLERGY QUESTION -->
-<div class="page" id="q5">
-  <div class="w3-container w3-flat-carrot">
-    <h2>Are you sneezing frequently?</h2>
-  </div>
-
-  <div class="w3-container">
-    <a href="#q6" onclick="allergyAdd()" class="w3-btn w3-green">Yes</a>
-    <a href="#q6" onclick="coldAdd()" class="w3-btn w3-red">No</a>
-  </div>
-</div>
-
-<!-- NEW COLD QUESTION -->
-<div class="page" id="q6">
-  <div class="w3-container w3-flat-carrot">
-    <h2>Do you feel body aches or fatigue?</h2>
-  </div>
-
-  <div class="w3-container">
-    <a href="#resultPage" onclick="coldAdd()" class="w3-btn w3-green">Yes</a>
-    <a href="#resultPage" onclick="allergyAdd()" class="w3-btn w3-red">No</a>
+    <a href="#q5" onclick="heartattackAdd()" class="w3-btn w3-green">Yes</a>
+    <a href="#q5" onclick="acidrefluxAdd()" class="w3-btn w3-red">No</a>
   </div>
 </div>
 
